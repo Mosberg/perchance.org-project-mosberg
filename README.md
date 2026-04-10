@@ -1,122 +1,134 @@
-<div class="hero" style="text-align: center; padding: 2rem;">
-  <h1>🌌 Project Mosberg</h1>
-  <p>A modular ecosystem of plugins & generators for Perchance.org</p>
-</div>
+# Project Mosberg
 
-<div class="badges" style="text-align: center; padding: 1rem; gap: 0.5rem; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+![Project Mosberg Logo](src/img/logo-animated.webp)
 
-[Plugins](#-core-plugins) | [Generators](#-generators) | [Philosophy](#-ecosystem-philosophy)
+A modular ecosystem of plugins and generators for [Perchance.org](https://perchance.org/).
 
-</div>
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Platform: Perchance](https://img.shields.io/badge/Platform-Perchance-blue.svg)](https://perchance.org)
+
+## Table of Contents
+
+- [Project Mosberg](#project-mosberg)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Goals](#goals)
+  - [Core Plugins](#core-plugins)
+    - [T2I Framework Plugin](#t2i-framework-plugin)
+    - [T2I Styles (Default)](#t2i-styles-default)
+    - [T2I Styles (Anime)](#t2i-styles-anime)
+    - [T2I Styles (NSFW)](#t2i-styles-nsfw)
+  - [Generators](#generators)
+    - [AI Character Generator](#ai-character-generator)
+    - [AI Pokemon Generator](#ai-pokemon-generator)
+    - [AI Text-to-Image Generator](#ai-text-to-image-generator)
+  - [Repository Structure](#repository-structure)
+  - [Ecosystem Philosophy](#ecosystem-philosophy)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Overview
+
+Project Mosberg is built for creators, tinkerers, and worldbuilders who want a more consistent and reusable Perchance workflow.
+
+### Goals
+
+- Build modular tools instead of one-off scripts
+- Keep text-to-image workflows consistent and reusable
+- Ship practical, ready-to-use generators
+- Make everything easy to fork, remix, and extend
+
+## Core Plugins
+
+### T2I Framework Plugin
+
+Flexible foundation for advanced text-to-image generator development.
+
+- Live: [perchance.org/t2i-framework-plugin-moss](https://perchance.org/t2i-framework-plugin-moss)
+- Edit: [perchance.org/t2i-framework-plugin-moss#edit](https://perchance.org/t2i-framework-plugin-moss#edit)
+
+### T2I Styles (Default)
+
+Reusable style presets for consistent prompt styling.
+
+- Live: [perchance.org/t2i-styles-moss](https://perchance.org/t2i-styles-moss)
+- Edit: [perchance.org/t2i-styles-moss#edit](https://perchance.org/t2i-styles-moss#edit)
+
+### T2I Styles (Anime)
+
+Anime-focused style presets for character and scene generation.
+
+- Live: [perchance.org/t2i-styles-moss-anime](https://perchance.org/t2i-styles-moss-anime)
+- Edit: [perchance.org/t2i-styles-moss-anime#edit](https://perchance.org/t2i-styles-moss-anime#edit)
+
+### T2I Styles (NSFW)
+
+Separate, opt-in style pack for NSFW workflows.
+
+- Live: [perchance.org/t2i-styles-moss-nsfw](https://perchance.org/t2i-styles-moss-nsfw)
+- Edit: [perchance.org/t2i-styles-moss-nsfw#edit](https://perchance.org/t2i-styles-moss-nsfw#edit)
+
+## Generators
+
+### AI Character Generator
+
+Creates characters using appearance, personality, and lore modules.
+
+- Live: [perchance.org/ai-character-generator-moss](https://perchance.org/ai-character-generator-moss)
+- Edit: [perchance.org/ai-character-generator-moss#edit](https://perchance.org/ai-character-generator-moss#edit)
+
+### AI Pokemon Generator
+
+Generates original Pokemon species with types, abilities, and flavor text.
+
+- Live: [perchance.org/ai-pokemon-generator-moss](https://perchance.org/ai-pokemon-generator-moss)
+- Edit: [perchance.org/ai-pokemon-generator-moss#edit](https://perchance.org/ai-pokemon-generator-moss#edit)
+
+### AI Text-to-Image Generator
+
+General-purpose text-to-image generator powered by the Mosberg framework.
+
+- Live: [perchance.org/ai-text-to-image-generator-moss](https://perchance.org/ai-text-to-image-generator-moss)
+- Edit: [perchance.org/ai-text-to-image-generator-moss#edit](https://perchance.org/ai-text-to-image-generator-moss#edit)
+
+## Repository Structure
+
+```text
+.
+|-- index.html
+|-- perchance.org/
+|   |-- generators/
+|   |   |-- ai-character-generator-moss/
+|   |   |-- ai-pokemon-generator-moss/
+|   |   `-- ai-text-to-image-generator-moss/
+|   `-- plugins/
+|       |-- t2i-framework-plugin-moss/
+|       |-- t2i-styles-moss/
+|       |-- t2i-styles-moss-anime/
+|       `-- t2i-styles-moss-nsfw/
+`-- src/img/
+```
+
+## Ecosystem Philosophy
+
+- Modular: Each plugin and generator acts as a reusable building block.
+- Extensible: Tools are designed to be forked, remixed, and expanded.
+- Consistent: Shared frameworks and style packs reduce duplication.
+- Open: Public and remix-friendly by default.
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Open a pull request with a clear description.
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-# ⭐ Why Project Mosberg Exists
-
-Project Mosberg is a growing suite of tools designed for creators, tinkerers, and worldbuilders who want more power, consistency, and style inside the Perchance platform.
-
-- Faster, cleaner, modular creation
-- Reusable frameworks instead of one‑off scripts
-- Consistent text‑to‑image styles
-- Ready‑to‑use generators
-- Extensible architecture for contributors
-
----
-
-<div class="section-plugins" style="text-align: center; padding: 2rem;">
-
-# 🚀 Core Plugins
-
-<div class="card-grid">
-
-<div class="card">
-<h3>T2I Framework Plugin</h3>
-<p>A flexible foundation for building advanced text‑to‑image generators.</p>
-<p><a href="https://perchance.org/t2i-framework-plugin-moss">Live</a> · <a href="https://perchance.org/t2i-framework-plugin-moss#edit">Edit</a></p>
-</div>
-
-<div class="card">
-<h3>T2I Styles</h3>
-<p>A curated library of reusable text‑to‑image style presets.</p>
-<p><a href="https://perchance.org/t2i-styles-moss">Live</a> · <a href="https://perchance.org/t2i-styles-moss#edit">Edit</a></p>
-</div>
-
-<div class="card">
-<h3>T2I Styles Anime</h3>
-<p>Anime‑focused presets for consistent character and scene generation.</p>
-<p><a href="https://perchance.org/t2i-styles-moss-anime">Live</a> · <a href="https://perchance.org/t2i-styles-moss-anime#edit">Edit</a></p>
-</div>
-
-<div class="card">
-<h3>T2I Styles NSFW</h3>
-<p>A separate, opt‑in style pack for NSFW workflows.</p>
-<p><a href="https://perchance.org/t2i-styles-moss-nsfw">Live</a> · <a href="https://perchance.org/t2i-styles-moss-nsfw#edit">Edit</a></p>
-</div>
-
-</div>
-</div>
-
----
-
-<div class="section-generators" style="text-align: center; padding: 2rem;">
-
-# 🧬 Generators
-
-<div class="card-grid">
-
-<div class="card">
-<h3>AI Character Generator</h3>
-<p>Creates characters with appearance, personality, and lore modules.</p>
-<p><a href="https://perchance.org/ai-character-generator-moss">Live</a> · <a href="https://perchance.org/ai-character-generator-moss#edit">Edit</a></p>
-</div>
-
-<div class="card">
-<h3>AI Pokémon Generator</h3>
-<p>Generates new Pokémon species with typings, abilities, and flavor text.</p>
-<p><a href="https://perchance.org/ai-pokemon-generator-moss">Live</a> · <a href="https://perchance.org/ai-pokemon-generator-moss#edit">Edit</a></p>
-</div>
-
-<div class="card">
-<h3>AI Text‑to‑Image Generator</h3>
-<p>A general‑purpose T2I generator powered by the Mosberg framework.</p>
-<p><a href="https://perchance.org/ai-text-to-image-generator-moss">Live</a> · <a href="https://perchance.org/ai-text-to-image-generator-moss#edit">Edit</a></p>
-</div>
-
-</div>
-</div>
-
----
-
-<div class="section-philosophy" style="text-align: center; padding: 2rem;">
-
-# 🧱 Ecosystem Philosophy
-
-### **Modular**
-
-Every plugin and generator is designed as a building block.
-
-### **Extensible**
-
-Creators can fork, remix, and expand the tools.
-
-### **Consistent**
-
-Shared styles, shared frameworks, shared logic.
-
-### **Open**
-
-Everything is public, editable, and remix‑friendly.
-
-</div>
-
----
-
-<div class="section-contributing" style="text-align: center; padding: 2rem;">
-
-### Made with creativity, modularity, and a love for worldbuilding.
-
-<h4>
-&copy; 2026 <a href="https://github.com/mosberg">Mosberg</a>. All rights reserved.
-</h4>
-
-</div>
+Created by [Mosberg](https://github.com/Mosberg) (2026).
