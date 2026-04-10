@@ -1,101 +1,70 @@
-# Project Mosberg
+<p align="center">
+  <img src="src/img/logo-animated.webp" alt="Project Mosberg logo" width="180" />
+</p>
 
-![Project Mosberg Logo](src/img/logo-animated.webp)
+<h1 align="center">Project Mosberg</h1>
 
-A modular ecosystem of plugins and generators for [Perchance.org](https://perchance.org/).
+<p align="center">
+  A modular ecosystem of plugins and generators for
+  <a href="https://perchance.org/">Perchance.org</a>.
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Platform: Perchance](https://img.shields.io/badge/Platform-Perchance-blue.svg)](https://perchance.org)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-1f8b4c.svg" alt="MIT License" /></a>
+  <a href="https://perchance.org/"><img src="https://img.shields.io/badge/Platform-Perchance-0969da.svg" alt="Perchance Platform" /></a>
+  <img src="https://img.shields.io/badge/Status-Active-2ea043.svg" alt="Status Active" />
+  <img src="https://img.shields.io/badge/Made%20For-Worldbuilders-f57c00.svg" alt="Made For Worldbuilders" />
+</p>
 
-## Table of Contents
+<p align="center">
+  <a href="#overview"><strong>Overview</strong></a> •
+  <a href="#core-plugins"><strong>Plugins</strong></a> •
+  <a href="#generators"><strong>Generators</strong></a> •
+  <a href="#repository-structure"><strong>Structure</strong></a> •
+  <a href="#contributing"><strong>Contributing</strong></a>
+</p>
 
-- [Project Mosberg](#project-mosberg)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Goals](#goals)
-  - [Core Plugins](#core-plugins)
-    - [T2I Framework Plugin](#t2i-framework-plugin)
-    - [T2I Styles (Default)](#t2i-styles-default)
-    - [T2I Styles (Anime)](#t2i-styles-anime)
-    - [T2I Styles (NSFW)](#t2i-styles-nsfw)
-  - [Generators](#generators)
-    - [AI Character Generator](#ai-character-generator)
-    - [AI Pokemon Generator](#ai-pokemon-generator)
-    - [AI Text-to-Image Generator](#ai-text-to-image-generator)
-  - [Repository Structure](#repository-structure)
-  - [Ecosystem Philosophy](#ecosystem-philosophy)
-  - [Contributing](#contributing)
-  - [License](#license)
+---
 
 ## Overview
 
-Project Mosberg is built for creators, tinkerers, and worldbuilders who want a more consistent and reusable Perchance workflow.
+> [!TIP]
+> Project Mosberg is designed for creators, tinkerers, and worldbuilders who want reusable building blocks instead of one-off Perchance setups.
 
-### Goals
+### What This Project Focuses On
 
-- Build modular tools instead of one-off scripts
-- Keep text-to-image workflows consistent and reusable
-- Ship practical, ready-to-use generators
-- Make everything easy to fork, remix, and extend
+- Modular tooling that can be mixed and remixed
+- Consistent text-to-image style systems
+- Practical generators that are ready to run
+- Open, extensible architecture for community iteration
 
 ## Core Plugins
 
-### T2I Framework Plugin
-
-Flexible foundation for advanced text-to-image generator development.
-
-- Live: [perchance.org/t2i-framework-plugin-moss](https://perchance.org/t2i-framework-plugin-moss)
-- Edit: [perchance.org/t2i-framework-plugin-moss#edit](https://perchance.org/t2i-framework-plugin-moss#edit)
-
-### T2I Styles (Default)
-
-Reusable style presets for consistent prompt styling.
-
-- Live: [perchance.org/t2i-styles-moss](https://perchance.org/t2i-styles-moss)
-- Edit: [perchance.org/t2i-styles-moss#edit](https://perchance.org/t2i-styles-moss#edit)
-
-### T2I Styles (Anime)
-
-Anime-focused style presets for character and scene generation.
-
-- Live: [perchance.org/t2i-styles-moss-anime](https://perchance.org/t2i-styles-moss-anime)
-- Edit: [perchance.org/t2i-styles-moss-anime#edit](https://perchance.org/t2i-styles-moss-anime#edit)
-
-### T2I Styles (NSFW)
-
-Separate, opt-in style pack for NSFW workflows.
-
-- Live: [perchance.org/t2i-styles-moss-nsfw](https://perchance.org/t2i-styles-moss-nsfw)
-- Edit: [perchance.org/t2i-styles-moss-nsfw#edit](https://perchance.org/t2i-styles-moss-nsfw#edit)
+| Plugin               | What It Does                                                   | Live                                                    | Edit                                                          |
+| -------------------- | -------------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------- |
+| T2I Framework Plugin | Foundation layer for advanced text-to-image generators         | [Open](https://perchance.org/t2i-framework-plugin-moss) | [Remix](https://perchance.org/t2i-framework-plugin-moss#edit) |
+| T2I Styles (Default) | Reusable default style presets for consistent prompts          | [Open](https://perchance.org/t2i-styles-moss)           | [Remix](https://perchance.org/t2i-styles-moss#edit)           |
+| T2I Styles (Anime)   | Anime-focused style presets for character and scene generation | [Open](https://perchance.org/t2i-styles-moss-anime)     | [Remix](https://perchance.org/t2i-styles-moss-anime#edit)     |
+| T2I Styles (NSFW)    | Separate opt-in style pack for NSFW workflows                  | [Open](https://perchance.org/t2i-styles-moss-nsfw)      | [Remix](https://perchance.org/t2i-styles-moss-nsfw#edit)      |
 
 ## Generators
 
-### AI Character Generator
-
-Creates characters using appearance, personality, and lore modules.
-
-- Live: [perchance.org/ai-character-generator-moss](https://perchance.org/ai-character-generator-moss)
-- Edit: [perchance.org/ai-character-generator-moss#edit](https://perchance.org/ai-character-generator-moss#edit)
-
-### AI Pokemon Generator
-
-Generates original Pokemon species with types, abilities, and flavor text.
-
-- Live: [perchance.org/ai-pokemon-generator-moss](https://perchance.org/ai-pokemon-generator-moss)
-- Edit: [perchance.org/ai-pokemon-generator-moss#edit](https://perchance.org/ai-pokemon-generator-moss#edit)
-
-### AI Text-to-Image Generator
-
-General-purpose text-to-image generator powered by the Mosberg framework.
-
-- Live: [perchance.org/ai-text-to-image-generator-moss](https://perchance.org/ai-text-to-image-generator-moss)
-- Edit: [perchance.org/ai-text-to-image-generator-moss#edit](https://perchance.org/ai-text-to-image-generator-moss#edit)
+| Generator                  | What It Does                                                                | Live                                                          | Edit                                                                |
+| -------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------- |
+| AI Character Generator     | Generates characters with appearance, personality, and lore modules         | [Open](https://perchance.org/ai-character-generator-moss)     | [Remix](https://perchance.org/ai-character-generator-moss#edit)     |
+| AI Pokemon Generator       | Generates original Pokemon species with typings, abilities, and flavor text | [Open](https://perchance.org/ai-pokemon-generator-moss)       | [Remix](https://perchance.org/ai-pokemon-generator-moss#edit)       |
+| AI Text-to-Image Generator | General-purpose text-to-image generator using the Mosberg framework         | [Open](https://perchance.org/ai-text-to-image-generator-moss) | [Remix](https://perchance.org/ai-text-to-image-generator-moss#edit) |
 
 ## Repository Structure
+
+<details>
+<summary><strong>Expand folder map</strong></summary>
 
 ```text
 .
 |-- index.html
+|-- LICENSE
+|-- README.md
 |-- perchance.org/
 |   |-- generators/
 |   |   |-- ai-character-generator-moss/
@@ -106,15 +75,20 @@ General-purpose text-to-image generator powered by the Mosberg framework.
 |       |-- t2i-styles-moss/
 |       |-- t2i-styles-moss-anime/
 |       `-- t2i-styles-moss-nsfw/
-`-- src/img/
+`-- src/
+    `-- img/
 ```
+
+</details>
 
 ## Ecosystem Philosophy
 
-- Modular: Each plugin and generator acts as a reusable building block.
-- Extensible: Tools are designed to be forked, remixed, and expanded.
-- Consistent: Shared frameworks and style packs reduce duplication.
-- Open: Public and remix-friendly by default.
+| Principle  | Meaning                                                           |
+| ---------- | ----------------------------------------------------------------- |
+| Modular    | Plugins and generators are designed as composable building blocks |
+| Extensible | Every module can be forked, remixed, and expanded                 |
+| Consistent | Shared frameworks and style packs reduce duplication              |
+| Open       | Public and remix-friendly by default                              |
 
 ## Contributing
 
@@ -122,13 +96,15 @@ Contributions are welcome.
 
 1. Fork the repository.
 2. Create a feature branch.
-3. Make your changes.
-4. Open a pull request with a clear description.
+3. Make focused, documented changes.
+4. Open a pull request with a clear summary.
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-Created by [Mosberg](https://github.com/Mosberg) (2026).
+<p align="center">
+  Created by <a href="https://github.com/Mosberg">Mosberg</a> (2026)
+</p>
