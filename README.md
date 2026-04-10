@@ -1,6 +1,6 @@
 # Perchance.org - Project Mosberg
 
-[Project Mosberg](https://mosberg.github.io/perchance.org-project-mosberg/)
+# **[Project Mosberg](https://mosberg.github.io/perchance.org-project-mosberg/)**
 
 **Project Mosberg is a collection of plugins and generators for the [Perchance.org](https://perchance.org/) platform.**
 
