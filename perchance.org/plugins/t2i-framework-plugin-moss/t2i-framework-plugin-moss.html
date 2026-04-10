@@ -3,92 +3,162 @@
   href="https://raw.githubusercontent.com/Mosberg/perchance.org-project-mosberg/main/src/img/favicon.webp"
   type="image/x-icon"
 />
-<div style="max-width: 600px; margin: 0 auto; text-align: left">
-  <h3 style="text-align: center">t2i-framework-plugin-moss</h3>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  body {
+    font-family: "Fira Code", monospace;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header h1 img {
+    width: 64px;
+    height: 64px;
+    margin-right: 15px;
+  }
+
+  header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  section ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+
+  section ul li {
+    margin-bottom: 10px;
+  }
+
+  section ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+  }
+
+  section ul li a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+  }
+
+  footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+<header>
+  <p>(click the edit button to see the code for the T2I Framework Plugin)</p>
+  <h1>
+    <img
+      src="https://raw.githubusercontent.com/Mosberg/perchance.org-project-mosberg/main/src/img/logo-animated.webp"
+      alt="Project Mosberg logo"
+    />T2I Framework Plugin
+  </h1>
   <p>
-    I made this framework thing as an experiment, and I've used it to make these
-    generators:
+    A collection of plugins and generators for the
+    <a href="https://perchance.org/">Perchance.org</a> platform.
   </p>
-  <ul>
-    <li>
-      <a
-        href="https://perchance.org/ai-character-generator#edit"
-        target="_blank"
-        >https://perchance.org/ai-character-generator#edit</a
-      >
-    </li>
-    <li>
-      <a href="https://perchance.org/ai-pokemon-generator#edit" target="_blank"
-        >https://perchance.org/ai-pokemon-generator#edit</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://perchance.org/ai-text-to-image-generator#edit"
-        target="_blank"
-        >https://perchance.org/ai-text-to-image-generator#edit</a
-      >
-    </li>
-    <li>
-      and a few others, mainly to separate the galleries and chats out into
-      different niches, since most have the same styles
-    </li>
-  </ul>
+</header>
+<main>
+  <section class="plugins">
+    <ul>
+      <h2>Plugins</h2>
+      <li>
+        <a href="https://perchance.org/t2i-framework-plugin-moss"
+          >T2I Framework Plugin</a
+        >
+      </li>
+      <li>
+        <a href="https://perchance.org/t2i-styles-moss">T2I Styles (Default)</a>
+      </li>
+      <li>
+        <a href="https://perchance.org/t2i-styles-moss-anime"
+          >T2I Styles (Anime)</a
+        >
+      </li>
+      <li>
+        <a href="https://perchance.org/t2i-styles-moss-nsfw"
+          >T2I Styles (NSFW)</a
+        >
+      </li>
+    </ul>
+  </section>
+  <section class="generators">
+    <ul>
+      <h2>Generators</h2>
+      <li>
+        <a href="https://perchance.org/ai-character-generator-moss"
+          >AI Character Generator</a
+        >
+      </li>
+      <li>
+        <a href="https://perchance.org/ai-pokemon-generator-moss"
+          >AI Pokemon Generator</a
+        >
+      </li>
+      <li>
+        <a href="https://perchance.org/ai-text-to-image-generator-moss"
+          >AI Text to Image Generator</a
+        >
+      </li>
+    </ul>
+  </section>
+</main>
+<footer>
   <p>
-    You're of course welcome to use it yourself to make your own image
-    generators.
-    <b
-      >Just fork one of the above generators and customize it according to the
-      comments I've added in the code</b
-    >.
+    &copy; 2026 <a href="https://github.com/Mosberg">Mosberg</a>. All rights
+    reserved.
   </p>
-  <p>
-    I'm still working on this, but I'll make sure to keep all changes
-    backwards-compatible so you can use it if you want to.
-  </p>
-  <p>
-    If there are any breaking changes, then I'll put them in
-    t2i-framework-plugin-v3.
-  </p>
-  <p>
-    Note: This is v2 and it's not backwards-compatible with v1. If you want to
-    port your v1 generator to v2, then start with a duplicate of one of the
-    generators that's linked above and make the necessary changes to align it
-    with your original v1 version.
-  </p>
-  <hr />
-  <p>
-    July 6th 2025: Added "share URL doesn't exist" message, with link to
-    un-quarantine page in case of false positive of the moderation system.
-    Ctrl+F for 'quarantined-files' to see changes.
-  </p>
-  <p>
-    July 5th 2025: Integrated the text-to-image-plugin's new
-    <a
-      href="https://perchance.org/text-to-image-gallery-custom-button-example#edit"
-      target="_blank"
-      >customButton</a
-    >
-    feature with the existing privateSave/createMediaGalleryPlugin feature, and
-    used customButton2 for "comment on gallery images" feature. Ctrl+F for
-    "settings.galleryOptions.customButton" and
-    "settings.galleryOptions.customButton2" in the code to see changes.
-  </p>
-  <p>
-    May 29th 2025: Added random append button. Add `randomAppend=\[list\]` to a
-    `type=paragraph` input to use it. Ctrl+F for "random-append-btn" in the code
-    to see changes.
-  </p>
-  <p>
-    May 29th 2025: Integrated
-    <a href="https://perchance.org/create-media-gallery-plugin"
-      >createMediaGalleryPlugin</a
-    >
-    - Ctrl+F for "privateSave" and "privateGallery" to see changes.
-  </p>
-  <br />
-  <p style="font-weight: bold; text-align: center">
-    Feedback / Feature requests:
-  </p>
-  <p style="text-align: center">[commentsPlugin()]</p>
-</div>
+</footer>
