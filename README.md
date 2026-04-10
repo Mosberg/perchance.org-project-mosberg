@@ -2,7 +2,7 @@
   <img src="src/img/logo-animated.webp" alt="Project Mosberg logo" width="180" />
 </p>
 
-<h1 align="center">Project Mosberg</h1>
+<h1 align="center">Project Mosberg - <a href="https://mosberg.github.io/perchance.org-project-mosberg/">Website</a></h1>
 
 <p align="center">
   A modular ecosystem of plugins and generators for
