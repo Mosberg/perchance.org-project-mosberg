@@ -1,3 +1,52 @@
+Absolutely — here’s a larger **curated anime preset pack** with 25 styles, normalized tag naming, and a cleaner taxonomy. Prompt preset systems are easiest to maintain when they separate subject text from reusable modifier classes such as style, lighting, composition, and quality boosters. [arxiv](https://arxiv.org/html/2204.13988)
+
+## Naming schema
+
+I normalized the tags to lower camelCase and kept them semantic rather than model-specific, because prompt modifier systems are typically easier to scale when style modifiers, subject terms, and quality boosters stay distinct. [learnprompting](https://learnprompting.org/docs/image_prompting/style_modifiers)
+
+```txt
+# normalized tag conventions
+# - lowerCamelCase for all tags
+# - broad families first, specific style IDs second
+# - avoid mixed spellings like "sci-fi"/"scifi", "multi-view"/"multiview"
+# - keep tags descriptive, not UI-oriented
+
+# primary families used below
+anime
+painting
+drawing
+illustration
+manga
+cartoon
+cinematic
+fantasy
+scifi
+retro
+cute
+darkFantasy
+sliceOfLife
+mecha
+portrait
+lineArt
+watercolor
+ink
+pixelArt
+conceptArt
+graphicDesign
+fashion
+poster
+noir
+monochrome
+vibrant
+cozy
+dramatic
+ethereal
+celShaded
+```
+
+## Preset pack
+
+```txt
 $output
   Painted Anime
     prompt
@@ -222,7 +271,13 @@ $output
     negative = [input.negative]
     meta:tags = [({celShaded:100, illustration:100, lineArt:85, cartoon:80, vibrant:80, stylized:85})]
     modifiers = [graphicModifiers, compositionModifiers, qualityModifiers]
+```
 
+## Modifier libraries
+
+This structure follows the common prompt-engineering pattern of keeping reusable modifiers grouped by function, such as style, lighting, quality, and composition, instead of duplicating those terms inside every preset. [getprompts](https://getprompts.me/guides/prompt-modifiers)
+
+```txt
 animeModifiers
   style
     ghibli = , Ghibli-inspired anime art style
@@ -463,3 +518,23 @@ qualityModifiers
     crisp = , crisp details
     polished = , polished finish
     professional = , professional-grade rendering
+```
+
+## Notes for maintenance
+
+A stable preset library usually benefits from a consistent taxonomy: subject first, then style modifiers, then quality or effect modifiers, with repeating terms used sparingly because repetition is itself a prompt-strengthening technique in some workflows. The other useful rule is to keep franchise-inspired or artist-inspired triggers isolated inside modifier groups, so you can swap them out later without renaming your whole preset pack. [blog.athina](https://blog.athina.ai/a-taxonomy-of-prompt-modifiers-for-text-to-image-generation)
+
+## Recommended next cleanup
+
+If you want this even more production-ready, the next step is to split each preset into:
+
+- `basePrompt`
+- `malePromptOverride`
+- `femalePromptOverride`
+- `negative`
+- `meta:tags`
+- `modifiers`
+
+That makes gender-bias correction, model-specific fallbacks, and UI filtering much easier in larger libraries. [stable-diffusion-art](https://stable-diffusion-art.com/style-presets/)
+
+Would you like the next pass as a strict JSON schema-friendly structure instead of this DSL format?
