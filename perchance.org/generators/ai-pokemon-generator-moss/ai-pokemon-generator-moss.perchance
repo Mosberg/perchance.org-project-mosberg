@@ -135,7 +135,11 @@ settings
           color = #31a8ff
           meta:import
             from = {import:t2i-styles-moss}
-            tagWeights = pokemon:10, pixelArt:3
+
+        Moss Anime Styles
+          color = #31a8ff
+          meta:import
+            from = {import:t2i-styles-moss-anime}
 
         🔞 NSFW / Adult Styles
           color = #ff4444
@@ -263,4 +267,13 @@ randomDescription
   {small|tiny|petite} {lizard-like|gecko-like|reptilian} creature with a {body|skin} covered in {twinkling|shimmering|glowing} {stardust-like|celestial|galactic} scales
 
 
+
+
+
+
 bannedUsersList
+  cdf4c17c0a807d5bf94d
+  60332c72aa747e3ebe57
+  a5e8118172150e8d69bd
+  81d2df9c4fc1ec6a93b9
+  a99b7b9dcdbdaed1f8f6

@@ -79,14 +79,44 @@ settings
             prompt = [input.description].
             negative = [input.negative].
             meta:position = 0
-          MTG Card
+          𝐌𝐓𝐆 𝐂𝐚𝐫𝐝
             prompt = [input.description], magic the gathering card
             negative = [input.negative], low-quality, deformed, blurry, bad art
             meta:position = 1
+          𝗧𝗖𝗚 𝗖𝗮𝗿𝗱
+            prompt = [input.description], pokemon trading card game
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 2
+            meta:tags = [({pokemon:10, tcg:3})]
+          𝑷𝒊𝒙𝒆𝒍 𝑨𝒓𝒕
+            prompt = [input.description], pixel art
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 3
+            meta:tags = [({pokemon:10, pixel:3})]
+          𝘾𝙖𝙧𝙩𝙤𝙤𝙣
+            prompt = [input.description], cartoon
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 4
+          𝔸𝕟𝕚𝕞𝕖
+            prompt = [input.description], anime
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 5
+          Pokemon
+            prompt = [input.description], pokemon pixel art
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 6
+            meta:tags = [({pokemon:10, pixel:3})]
+
         Moss Default Styles
           color = #31a8ff
           meta:import
             from = {import:t2i-styles-moss}
+
+        Moss Anime Styles
+          color = #31a8ff
+          meta:import
+            from = {import:t2i-styles-moss-anime}
+
         🔞 NSFW / Adult Styles
           color = #ff4444
           meta:import

@@ -76,19 +76,57 @@ settings // This is the main settings list that is passed to `t2i-framework-plug
 
     artStyle
       label = 🎨 Art Style
-      type = select // <-- drop-down select menu
+      type = select
       remember = true // <-- makes it so the selected option will be remembered even if the user refreshes/closes the page
       options
-        meta:import
-          from = {import:t2i-styles} // <-- imports a bunch of 'default' styles. You can delete this line and the above line, or put these two lines at the end, below 'No style' if you want. You can also visit  https://perchance.org/t2i-styles#edit  in your browser, and then edit the styles to your liking, then save it, then swap  {import:t2i-styles}  at the start of the line you're reading right now with  {import:the-name-at-the-end-of-your-page-url}  - note that the "the-name-at-the-end-of-your-page-url" will be randomly generated letters numbers when you save it, but you can change that in settings menu if you want.
-          //tagWeights = pokemon:10, pixelArt:3    // Note: tagWeights are not used in this generator, but you can remove the "//" at the very beginning of this line (so it just starts with "tagWeights = ") and then specify some tags and their importance values - open this link in a new tab to see tags:   https://perchance.org/t2i-styles#edit   - look at the names on the "meta:tags" lines.
-        MTG Card // <-- example of a custom "Magic The Gathering" card style - just follow this format and add as many of them as you want to this 'options' list. Make sure to keep the indentation correctly aligned as you see here. Notice that you can use the other inputs within the prompt like [input.description]. You can create more inputs, and use them in the prompt too. Look at the `shape` input below for an example of a drop-down input (i.e. type=select). That one can be referenced via [input.shape] - not that you'd want to put that in the prompt, but you can copy that `shape` list and name it something else, and then reference it via [input.somethingElse]
-          prompt = magic the gathering card, [input.description], incredible magic the gathering artwork
-          negative = [input.negative], low-quality, deformed, blurry, bad art
-        𝗡𝗼 𝘀𝘁𝘆𝗹𝗲
-          prompt = [input.description] // for "No style" we just use their prompt directly - i.e. we don't add any other text around it.
-          negative = [input.negative]
-          meta:position = 5 // <-- this means the "No style" option will be exactly 5th in the list, regardless of tagWeights
+        Custom Styles
+          color = #f6c344
+          𝗡𝗼 𝘀𝘁𝘆𝗹𝗲
+            prompt = [input.description].
+            negative = [input.negative].
+            meta:position = 0
+          𝐌𝐓𝐆 𝐂𝐚𝐫𝐝
+            prompt = [input.description], magic the gathering card
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 1
+          𝗧𝗖𝗚 𝗖𝗮𝗿𝗱
+            prompt = [input.description], pokemon trading card game
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 2
+            meta:tags = [({pokemon:10, tcg:3})]
+          𝑷𝒊𝒙𝒆𝒍 𝑨𝒓𝒕
+            prompt = [input.description], pixel art
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 3
+            meta:tags = [({pokemon:10, pixel:3})]
+          𝘾𝙖𝙧𝙩𝙤𝙤𝙣
+            prompt = [input.description], cartoon
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 4
+          𝔸𝕟𝕚𝕞𝕖
+            prompt = [input.description], anime
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 5
+          Pokemon
+            prompt = [input.description], pokemon pixel art
+            negative = [input.negative], low-quality, deformed, blurry, bad art
+            meta:position = 6
+            meta:tags = [({pokemon:10, pixel:3})]
+
+        Moss Default Styles
+          color = #31a8ff
+          meta:import
+            from = {import:t2i-styles-moss}
+
+        Moss Anime Styles
+          color = #31a8ff
+          meta:import
+            from = {import:t2i-styles-moss-anime}
+
+        🔞 NSFW / Adult Styles
+          color = #ff4444
+          meta:import
+            from = {import:t2i-styles-moss-nsfw}
 
     shape
       label = 🖼️ Shape
