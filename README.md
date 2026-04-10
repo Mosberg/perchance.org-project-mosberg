@@ -1,11 +1,13 @@
-<div class="hero">
+<div class="hero" style="text-align: center; padding: 2rem;">
   <h1>🌌 Project Mosberg</h1>
   <p>A modular ecosystem of plugins & generators for Perchance.org</p>
 </div>
 
+<div class="badges" style="text-align: center; padding: 1rem; gap: 0.5rem; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
 <span class="badge plugins">Plugins</span>
 <span class="badge generators">Generators</span>
 <span class="badge philosophy">Philosophy</span>
+</div>
 
 ---
 
@@ -21,7 +23,7 @@ Project Mosberg is a growing suite of tools designed for creators, tinkerers, an
 
 ---
 
-<div class="section-plugins">
+<div class="section-plugins" style="text-align: center; padding: 2rem;">
 
 # 🚀 Core Plugins
 
@@ -56,7 +58,7 @@ Project Mosberg is a growing suite of tools designed for creators, tinkerers, an
 
 ---
 
-<div class="section-generators">
+<div class="section-generators" style="text-align: center; padding: 2rem;">
 
 # 🧬 Generators
 
@@ -85,7 +87,7 @@ Project Mosberg is a growing suite of tools designed for creators, tinkerers, an
 
 ---
 
-<div class="section-philosophy">
+<div class="section-philosophy" style="text-align: center; padding: 2rem;">
 
 # 🧱 Ecosystem Philosophy
 
@@ -109,46 +111,12 @@ Everything is public, editable, and remix‑friendly.
 
 ---
 
-# 📦 Installation & Usage
+<div class="section-contributing" style="text-align: center; padding: 2rem;">
 
-You don’t “install” Project Mosberg — you **use** it by linking to the generators or copying the plugin code into your own Perchance projects.
+### Made with creativity, modularity, and a love for worldbuilding.
 
-Each plugin page includes:
+<h4>
+&copy; 2026 <a href="https://github.com/mosberg">Mosberg</a>. All rights reserved.
+</h4>
 
-- Editable source
-- Documentation
-- Examples
-- Style presets
-- Integration notes
-
----
-
-# 🛠️ Contributing
-
-Project Mosberg is designed to be contributor‑friendly:
-
-- Clear structure
-- Modular code
-- Consistent naming
-- Easy to fork
-- Easy to extend
-
----
-
-# 📜 Optional Metadata
-
-```yaml
----
-title: Project Mosberg
-description: A modular suite of plugins and generators for Perchance.org
-tags: [perchance, t2i, plugins, generators, moss]
-version: 1.0.0
----
-```
-
----
-
-# 🧭 Footer
-
-Made with creativity, modularity, and a love for worldbuilding.
-Part of the **Mosberg Creative Ecosystem**.
+</div>
