@@ -4,9 +4,9 @@
 </div>
 
 <div class="badges" style="text-align: center; padding: 1rem; gap: 0.5rem; display: flex; flex-wrap: wrap; justify-content: space-evenly;">
-<span class="badge plugins">Plugins</span>
-<span class="badge generators">Generators</span>
-<span class="badge philosophy">Philosophy</span>
+
+[Plugins](#-core-plugins) | [Generators](#-generators) | [Philosophy](#-ecosystem-philosophy)
+
 </div>
 
 ---
