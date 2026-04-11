@@ -1,0 +1,6 @@
+settings
+  instruction() =>
+    return "Write code for " + input.description;
+  onFinish(data) =>
+    window.lastResult = data;
+    localStorage.response = responseEl.value;

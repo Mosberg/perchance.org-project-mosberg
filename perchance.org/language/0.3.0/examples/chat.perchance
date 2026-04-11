@@ -1,0 +1,10 @@
+ai = {import:ai-text-plugin}
+
+$output(settings) =>
+  if(!window.chatState) window.chatState = {};
+  return `<section>[input.userMessage]</section>`
+
+messages
+  systemPrompt = You are a helpful assistant.
+  userMessage = [input.userMessage]
+  assistantMessage = [if (window.chatState.ready) {"Ready."} else {"Thinking..."}]

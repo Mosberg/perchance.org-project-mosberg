@@ -1,0 +1,6 @@
+artStyle
+  Painted Anime
+    prompt
+      [input.description], painterly anime style, cinematic lighting. ^2
+    negative = [input.negative]
+    meta:tags = [({anime:100, painting:100, drawing:55})]

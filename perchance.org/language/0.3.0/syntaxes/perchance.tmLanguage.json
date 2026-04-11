@@ -1,0 +1,338 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Perchance (Mosberg Advanced v3)",
+  "scopeName": "source.perchance",
+  "fileTypes": ["perchance", "pch", "txt"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#hybrid-js-function-line" },
+    { "include": "#hybrid-js-body" },
+    { "include": "#function-definition" },
+    { "include": "#assignment-line" },
+    { "include": "#property-line" },
+    { "include": "#list-definition" },
+    { "include": "#list-item" },
+    { "include": "#html-script" },
+    { "include": "#html" },
+    { "include": "#square-expression" },
+    { "include": "#curly-expression" }
+  ],
+  "repository": {
+
+    "hybrid-js-function-line": {"patterns": [
+      {
+        "name": "meta.function.definition.hybrid.perchance",
+        "begin": "^(\s*)(async\s+)?(\$?[A-Za-z_][\w$]*)(\s*)(\()",
+        "beginCaptures": {
+          "2": { "name": "storage.modifier.async.perchance" },
+          "3": { "name": "entity.name.function.perchance" },
+          "5": { "name": "punctuation.definition.parameters.begin.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "name": "variable.parameter.perchance", "match": "\b[A-Za-z_][\w$]*\b" },
+          { "name": "punctuation.definition.parameters.end.perchance", "match": "\)" },
+          { "name": "storage.type.function.arrow.perchance", "match": "=>" }
+        ]
+      }
+    ]},
+    "hybrid-js-body": {"patterns": [
+      {
+        "name": "meta.embedded.block.javascript.perchance",
+        "begin": "^(\s+)(?=(?:async\s+)?\$?[A-Za-z_][\w$]*\s*\([^\n]*\)\s*=>\s*$|(?:prompt|negative|modifiers|genre|shot|color|effect|title|description|placeholder|visible|example|label|tooltip|remember|type|default|options|instruction|onChunk|onStart|onFinish|render|startWith|outputTo)\s*\([^\n]*\)\s*=>\s*$)",
+        "end": "^(?!\1\s)|^(?=\1\S)",
+        "contentName": "source.js",
+        "patterns": [
+          { "include": "source.js" }
+        ]
+      }
+    ]},
+    "comments": {"patterns": [
+      { "name": "comment.line.number-sign.perchance", "match": "^\\s*#.*$" },
+      { "name": "comment.line.double-slash.perchance", "match": "^\\s*//.*$" }
+    ]},
+    "function-definition": {"patterns": [
+      {
+        "name": "meta.function.definition.perchance",
+        "begin": "^(\\$[A-Za-z_][\\w$]*)(\\s*)(\\()",
+        "beginCaptures": {
+          "1": { "name": "entity.name.function.perchance" },
+          "3": { "name": "punctuation.definition.parameters.begin.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "name": "variable.parameter.perchance", "match": "\\b[A-Za-z_][\\w$]*\\b" },
+          { "name": "punctuation.definition.parameters.end.perchance", "match": "\\)" },
+          { "name": "storage.type.function.arrow.perchance", "match": "=>" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#operators" }
+        ]
+      }
+    ]},
+    "assignment-line": {"patterns": [
+      {
+        "name": "meta.assignment.perchance",
+        "begin": "^(?!\\s|#|//|<)([A-Za-z_$][\\w.$-]*)(\\s*)(=)",
+        "beginCaptures": {
+          "1": { "name": "variable.other.assignment.perchance" },
+          "3": { "name": "keyword.operator.assignment.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "include": "#import-special" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#prompt-prose" },
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#strings" },
+          { "include": "#numbers" },
+          { "include": "#operators" },
+          { "include": "#html" },
+          { "include": "#variables" }
+        ]
+      }
+    ]},
+    "property-line": {"patterns": [
+      {
+        "name": "meta.property.line.perchance",
+        "begin": "^(\\s+)([A-Za-z_][\\w-]*)(:)([A-Za-z_][\\w-]*)(\\s*)(=)?",
+        "beginCaptures": {
+          "2": { "name": "support.type.property.namespace.perchance" },
+          "3": { "name": "punctuation.separator.key-value.perchance" },
+          "4": { "name": "support.type.property.name.perchance" },
+          "6": { "name": "keyword.operator.assignment.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#prompt-prose" },
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#strings" },
+          { "include": "#numbers" },
+          { "include": "#operators" },
+          { "include": "#variables" }
+        ]
+      },
+      {
+        "name": "meta.property.line.simple.perchance",
+        "begin": "^(\\s+)(prompt|negative|modifiers|genre|shot|color|effect|title|description|placeholder|visible|example|label|tooltip|remember|type|default|options)(\\s*)(=)?",
+        "beginCaptures": {
+          "2": { "name": "support.type.property.name.perchance" },
+          "4": { "name": "keyword.operator.assignment.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#prompt-prose" },
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#strings" },
+          { "include": "#numbers" },
+          { "include": "#operators" },
+          { "include": "#variables" }
+        ]
+      }
+    ]},
+    "list-definition": {"patterns": [
+      {
+        "name": "meta.list.definition.perchance",
+        "begin": "^(?!\\s|#|//|<|\\$)([A-Za-z_][\\w.-]*)(\\s*)(?=$|\\[|\\{|<)",
+        "beginCaptures": {
+          "1": { "name": "entity.name.type.list.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#operators" },
+          { "include": "#strings" },
+          { "include": "#html" }
+        ]
+      }
+    ]},
+    "list-item": {"patterns": [
+      {
+        "name": "meta.list.item.perchance",
+        "begin": "^(\\t| +)(?=\\S)",
+        "beginCaptures": {
+          "1": { "name": "punctuation.whitespace.indent.perchance" }
+        },
+        "end": "$",
+        "patterns": [
+          { "include": "#meta-keys" },
+          { "name": "constant.numeric.weight.perchance", "match": "\\b\\d+(?:\\.\\d+)?(?=\\s+\\S)" },
+          { "name": "keyword.operator.probability.perchance", "match": "\\^(?:\\d+(?:\\.\\d+)?)?" },
+          { "name": "keyword.control.conditional.line.perchance", "match": "\\b(?:if|else\\s+if|else)\\b" },
+          { "name": "storage.type.function.arrow.perchance", "match": "=>" },
+          { "include": "#import-special" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#prompt-prose" },
+          { "include": "#square-expression" },
+          { "include": "#curly-expression" },
+          { "include": "#html-script" },
+          { "include": "#html" },
+          { "include": "#strings" },
+          { "include": "#operators" },
+          { "include": "#variables" },
+          { "name": "string.unquoted.list-item.perchance", "match": "[^\\[{<^]+" }
+        ]
+      }
+    ]},
+    "meta-keys": {"patterns": [
+      {
+        "name": "meta.property.key.perchance",
+        "match": "\\b([A-Za-z_][\\w-]*)(:)([A-Za-z_][\\w-]*)\\b",
+        "captures": {
+          "1": { "name": "support.type.property.namespace.perchance" },
+          "2": { "name": "punctuation.separator.key-value.perchance" },
+          "3": { "name": "support.type.property.name.perchance" }
+        }
+      }
+    ]},
+    "square-expression": {"patterns": [
+      {
+        "name": "meta.embedded.square.perchance",
+        "begin": "\\[",
+        "beginCaptures": { "0": { "name": "punctuation.section.brackets.begin.perchance" } },
+        "end": "\\]",
+        "endCaptures": { "0": { "name": "punctuation.section.brackets.end.perchance" } },
+        "patterns": [
+          { "include": "#strings" },
+          { "include": "#numbers" },
+          { "include": "#keywords" },
+          { "include": "#operators" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#function-calls" },
+          { "include": "#properties" },
+          { "include": "#variables" },
+          { "include": "#curly-expression" }
+        ]
+      }
+    ]},
+    "curly-expression": {"patterns": [
+      {
+        "name": "meta.embedded.curly.perchance",
+        "begin": "\\{",
+        "beginCaptures": { "0": { "name": "punctuation.section.braces.begin.perchance" } },
+        "end": "\\}",
+        "endCaptures": { "0": { "name": "punctuation.section.braces.end.perchance" } },
+        "patterns": [
+          { "include": "#import-special" },
+          { "include": "#strings" },
+          { "include": "#numbers" },
+          { "include": "#keywords" },
+          { "include": "#operators" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#function-calls" },
+          { "include": "#properties" },
+          { "include": "#variables" },
+          { "include": "#square-expression" }
+        ]
+      }
+    ]},
+    "globals": {"patterns": [
+      { "name": "variable.language.input.perchance", "match": "\\binput(?=\\.)" },
+      { "name": "variable.language.settings.perchance", "match": "\\bsettings(?=\\.)" },
+      { "name": "variable.language.window.perchance", "match": "\\bwindow(?=\\.)" },
+      { "name": "variable.other.memberchain.input.perchance", "match": "\\binput\\.[A-Za-z_][\\w$]*(?:\\.[A-Za-z_][\\w$]*)*" },
+      { "name": "variable.other.memberchain.settings.perchance", "match": "\\bsettings\\.[A-Za-z_][\\w$]*(?:\\.[A-Za-z_][\\w$]*)*" },
+      { "name": "variable.other.memberchain.window.perchance", "match": "\\bwindow\\.[A-Za-z_][\\w$]*(?:\\.[A-Za-z_][\\w$]*)*" }
+    ]},
+    "special-identifiers": {"patterns": [
+      { "name": "support.variable.state.perchance", "match": "\\b(currentChatId|messageId|chatId|characterId|userMessage|assistantMessage|systemPrompt|apiKey|model|temperature|maxTokens|stopSequence|role|content|messages|history|memory|persona|scenario|instruction|rewriteStyle|rewriteMode|codeLanguage|promptPrefix|promptSuffix)\\b" },
+      { "name": "support.function.ai.perchance", "match": "\\b(generate|rewrite|convert|chat|complete|stream|sendMessage|appendMessage|renderMessage|resetChat|loadCharacter|saveSettings)\\b(?=\\s*\\()" }
+    ]},
+    "prompt-prose": {"patterns": [
+      {
+        "name": "meta.prompt.prose.perchance",
+        "begin": "(?:(?<=\\=)|(?<=^\\s{2,}prompt\\s=)|(?<=^\\s{2,}prompt\\s)|(?<=^\\s{2,}description\\s=)|(?<=^\\s{2,}description\\s)|(?<=^\\s{2,}placeholder\\s=)|(?<=^\\s{2,}placeholder\\s))\\s*",
+        "end": "(?=\\s\\^(?:\\d+(?:\\.\\d+)?)?\\s*$)|$",
+        "patterns": [
+          { "include": "#square-expression" },
+          { "include": "#globals" },
+          { "include": "#special-identifiers" },
+          { "include": "#strings" },
+          { "name": "string.unquoted.prompt.perchance", "match": "[^\\[^\\n]+" }
+        ]
+      },
+      {
+        "name": "meta.prompt.weight.perchance",
+        "match": "\\s(\\^)(\\d+(?:\\.\\d+)?)\\s*$",
+        "captures": {
+          "1": { "name": "keyword.operator.probability.perchance" },
+          "2": { "name": "constant.numeric.perchance" }
+        }
+      }
+    ]},
+    "import-special": {"patterns": [
+      { "name": "support.function.import.perchance", "match": "\\bimport(?=\\s*:)" },
+      { "name": "punctuation.separator.key-value.perchance", "match": ":" },
+      { "name": "entity.name.module.perchance", "match": "(?<=import:)[^}\\s,]+" }
+    ]},
+    "strings": {"patterns": [
+      { "name": "string.quoted.double.perchance", "begin": "\"", "end": "\"", "patterns": [{ "name": "constant.character.escape.perchance", "match": "\\\\." }] },
+      { "name": "string.quoted.single.perchance", "begin": "'", "end": "'", "patterns": [{ "name": "constant.character.escape.perchance", "match": "\\\\." }] },
+      { "name": "string.quoted.backtick.perchance", "begin": "`", "end": "`", "patterns": [{ "name": "constant.character.escape.perchance", "match": "\\\\." }] }
+    ]},
+    "numbers": {"patterns": [
+      { "name": "constant.numeric.perchance", "match": "\\b\\d+(?:\\.\\d+)?\\b" }
+    ]},
+    "keywords": {"patterns": [
+      { "name": "keyword.control.conditional.perchance", "match": "\\b(if|else|return|for|while|let|const|var|function|new|try|catch|finally|await|async)\\b" },
+      { "name": "constant.language.boolean.perchance", "match": "\\b(true|false|null|undefined)\\b" },
+      { "name": "keyword.operator.ternary.perchance", "match": "\\?|:" }
+    ]},
+    "operators": {"patterns": [
+      { "name": "keyword.operator.comparison.perchance", "match": "===|!==|==|!=|<=|>=|<|>" },
+      { "name": "keyword.operator.logical.perchance", "match": "&&|\\|\\||!" },
+      { "name": "keyword.operator.assignment.perchance", "match": "(?<![=!<>])=(?!=)" },
+      { "name": "keyword.operator.arithmetic.perchance", "match": "\\+\\+|--|\\+|-|\\*|/|%" },
+      { "name": "keyword.operator.member.perchance", "match": "\\." },
+      { "name": "punctuation.separator.sequence.perchance", "match": ",|;" }
+    ]},
+    "function-calls": {"patterns": [
+      { "name": "entity.name.function.perchance", "match": "\\$?[A-Za-z_][\\w$]*(?=\\s*\\()" }
+    ]},
+    "properties": {"patterns": [
+      { "name": "support.variable.property.perchance", "match": "(?<=\\.)[A-Za-z_][\\w$]*" }
+    ]},
+    "variables": {"patterns": [
+      { "name": "variable.other.perchance", "match": "\\$?[A-Za-z_][\\w$]*" }
+    ]},
+    "html-script": {"patterns": [
+      {
+        "name": "meta.embedded.block.javascript",
+        "begin": "(<script\\b[^>]*>)",
+        "beginCaptures": { "1": { "name": "meta.tag.script.begin.html.perchance" } },
+        "end": "(</script>)",
+        "endCaptures": { "1": { "name": "meta.tag.script.end.html.perchance" } },
+        "contentName": "source.js",
+        "patterns": []
+      }
+    ]},
+    "html": {"patterns": [
+      {
+        "name": "meta.tag.any.html.perchance",
+        "begin": "</?[A-Za-z][^>]*",
+        "end": ">",
+        "patterns": [
+          { "name": "entity.name.tag.html", "match": "</?[A-Za-z][A-Za-z0-9:-]*" },
+          { "name": "entity.other.attribute-name.html", "match": "\\b[a-zA-Z_:][-a-zA-Z0-9_:.]*\\b(?=\\s*=)" },
+          { "name": "string.quoted.double.html", "begin": "\"", "end": "\"" },
+          { "name": "string.quoted.single.html", "begin": "'", "end": "'" }
+        ]
+      }
+    ]}
+  },
+  "uuid": "c580e9c9-7778-4cf8-b090-64fd8be49076"
+}

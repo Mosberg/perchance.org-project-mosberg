@@ -2,7 +2,7 @@
   "name": "perchance-language-mosberg",
   "displayName": "Perchance Language (Mosberg)",
   "description": "VS Code syntax highlighting for advanced Perchance generators, plugins, and app-style lists.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "mosberg",
   "license": "MIT",
   "engines": {

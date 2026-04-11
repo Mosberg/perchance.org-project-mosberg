@@ -1,0 +1,13 @@
+ai = {import:ai-text-plugin}
+
+async generate() =>
+  let pendingObj = ai(settings);
+  let data = await pendingObj.onFinishPromise;
+  window.lastResult = data;
+
+settings
+  instruction() =>
+    return modes[currentMode].instruction.toString();
+  onFinish(data) =>
+    localStorage.response = responseEl.value;
+    renderPreview(data);
