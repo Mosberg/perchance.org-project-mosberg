@@ -1,0 +1,21 @@
+# v3 sample using more advanced chat/code/rewrite style patterns
+chatPlugin = {import:ai-chat-plugin}
+
+$output(settings) =>
+  if(!window.chatState) window.chatState = {};
+  if(!settings.model.temperature) {
+    settings.model.temperature = 0.9;
+  }
+  return `<section class="chat">[input.userMessage]</section>`
+
+chatConfig
+  title = AI Chat Moss
+  description = Rewrite [input.userMessage] in [rewriteStyle] style and keep [settings.model.temperature] stable. ^1.5
+  placeholder = Ask [window.currentCharacter] for help with [codeLanguage].
+  visible = [input.userMessage && settings.model]
+  meta:tags = [({chat:100, rewrite:70, code:60})]
+
+messages
+  systemPrompt = You are a helpful coding assistant.
+  userMessage = [input.userMessage]
+  assistantMessage = [if (window.chatState.ready) {"Ready."} else {"Thinking..."}]
