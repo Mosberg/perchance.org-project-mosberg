@@ -1,0 +1,27 @@
+# Dedicated scope demo
+textToImagePlugin = {import:text-to-image-plugin}
+
+$output(settings) =>
+  if(!window.input) window.input = {};
+  if(!settings.imageOptions.style) {
+    settings.imageOptions.style = "border-radius:3px;";
+  }
+  return `<div class="wrapper">[input.description]</div>`
+
+artStyle
+  Painted Anime
+    prompt
+      [input.description], art by atey ghailan, painterly anime style, [settings.imageOptions.style] ^2
+    negative = [input.negative]
+    meta:tags = [({anime:100, painting:100, drawing:55})]
+    modifiers
+      genre
+        sci-fi = , sci-fi
+        horror = , horror
+
+output
+  <div class="prompt-block">
+    <h2>[window.titleText]</h2>
+    <p>[input.description]</p>
+    <p>[settings.imageOptions.style]</p>
+  </div>
