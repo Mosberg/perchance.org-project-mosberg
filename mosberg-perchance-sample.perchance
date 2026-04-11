@@ -1,0 +1,27 @@
+# Sample based on Mosberg advanced Perchance patterns
+textToImagePlugin = {import:text-to-image-plugin}
+t2iStyles = {import:t2i-styles-moss}
+
+$output(settings) =>
+  if(!window.input) window.input = {};
+  if(!settings.imageOptions.style) {
+    settings.imageOptions.style = "border-radius:3px;";
+  }
+  return `<div class="wrapper">[title]</div>`
+
+gender
+  female
+  male
+
+characterPrompt
+  [if (gender == "female") {"woman"} else {"man"}], [t2iStyles.selectOne]
+
+output
+  <div class="prompt-block">
+    <h2>[title]</h2>
+    <p>[characterPrompt]</p>
+    <script>
+      const ready = true;
+      console.log("Perchance embedded script", ready);
+    </script>
+  </div>
