@@ -1,0 +1,9 @@
+settings
+  onChunk(data) =>
+    if(responseEl.scrollTop + responseEl.offsetHeight > responseEl.scrollHeight - 60) {
+      responseEl.scrollTop = responseEl.scrollHeight;
+    }
+  onStart() =>
+    generateBtn.disabled = true;
+  onFinish() =>
+    generateBtn.disabled = false;

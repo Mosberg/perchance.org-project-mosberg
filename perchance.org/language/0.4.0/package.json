@@ -1,0 +1,67 @@
+{
+  "name": "perchance-language-mosberg",
+  "displayName": "Perchance Language (Mosberg)",
+  "description": "Color-rich VS Code syntax highlighting for advanced Perchance generators, plugins, and hybrid JS bodies.",
+  "version": "0.4.0",
+  "publisher": "mosberg",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mosberg/perchance-language-mosberg"
+  },
+  "homepage": "https://github.com/Mosberg/perchance-language-mosberg#readme",
+  "bugs": {
+    "url": "https://github.com/Mosberg/perchance-language-mosberg/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "perchance",
+    "javascript",
+    "textmate",
+    "syntax highlighting",
+    "generator",
+    "vscode"
+  ],
+  "files": [
+    "syntaxes/**",
+    "media/**",
+    "examples/**",
+    "language-configuration.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "perchance",
+        "aliases": [
+          "Perchance",
+          "perchance"
+        ],
+        "extensions": [
+          ".perchance",
+          ".pch"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "perchance",
+        "scopeName": "source.perchance",
+        "path": "./syntaxes/perchance.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.javascript": "javascript",
+          "meta.embedded.block.javascript.perchance": "javascript"
+        }
+      }
+    ]
+  }
+}

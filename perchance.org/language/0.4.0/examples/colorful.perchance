@@ -1,0 +1,14 @@
+ai = {import:ai-text-plugin}
+
+async generate() =>
+  let pendingObj = ai(settings);
+  let regex = /chat|code|rewrite/g;
+  console.log(window.chatState?.ready);
+  let payload = {role:"user", content: input.userMessage, maxTokens: 512};
+  localStorage.lastPayload = JSON.stringify(payload);
+  return `<div style="color:red; margin:8px; padding:4px;">[input.userMessage]</div>`;
+
+settings
+  onFinish(data) =>
+    this.lastResult = data;
+    responseEl.value = arguments[0];
