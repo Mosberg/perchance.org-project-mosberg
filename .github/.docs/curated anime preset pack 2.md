@@ -1,3 +1,10 @@
+Got it — you want the modifier groups **expanded under each style** as named slots like `style`, `finish`, `output`, `effect`, `time`, `quality`, `shot`, etc., rather than a flat `modifiers = [groupA, groupB]` list. That structure makes sense because prompt systems are easier to manage when modifiers are grouped by functional role such as style modifiers and quality boosters instead of being merged into one undifferentiated bucket. [tandfonline](https://www.tandfonline.com/doi/full/10.1080/0144929X.2023.2286532)
+
+## Revised format
+
+Here’s the curated pack rewritten in your preferred structure, with normalized modifier keys and style-local modifier mapping. The category split also aligns with the common prompt taxonomy of style modifiers, subject descriptors, and quality boosters. [ideas.repec](https://ideas.repec.org/a/taf/tbitxx/v43y2024i15p3763-3776.html)
+
+```txt
 $output
   Painted Anime +
     prompt
@@ -21,9 +28,7 @@ $output
       style = [animeModifiers.style]
       finish = [qualityModifiers.finish]
       output = [qualityModifiers.output]
-      effect1 = [animeModifiers.effect]
-      effect2 = [cinematicModifiers.effect]
-      effect3 = [lightingModifiers.effect]
+      effect = [animeModifiers.effect, cinematicModifiers.effect, lightingModifiers.effect]
       time = [lightingModifiers.time]
       quality = [lightingModifiers.quality]
       shot = [cinematicModifiers.shot]
@@ -38,8 +43,7 @@ $output
       style = [animeModifiers.style]
       finish = [qualityModifiers.finish]
       output = [qualityModifiers.output]
-      effect1 = [animeModifiers.effect]
-      effect2 = [moodModifiers.effect]
+      effect = [animeModifiers.effect, moodModifiers.effect]
       mood = [moodModifiers.mood]
       color = [moodModifiers.color]
       focus = [portraitModifiers.focus]
@@ -429,7 +433,13 @@ $output
       motion = [compositionModifiers.motion]
       finish = [qualityModifiers.finish]
       output = [qualityModifiers.output]
+```
 
+## Shared groups
+
+These are the normalized shared groups referenced by the style-local mappings above. Grouping modifiers this way is consistent with how practitioners separate reusable style modifiers from quality boosters and other prompt fragments. [arxiv](https://arxiv.org/html/2204.13988)
+
+```txt
 animeModifiers
   style
     ghibli = , Ghibli-inspired anime art style
@@ -670,3 +680,21 @@ qualityModifiers
     crisp = , crisp details
     polished = , polished finish
     professional = , professional-grade rendering
+```
+
+## Structure rules
+
+A clean rule set for this DSL is:
+
+- Use `modifiers` as a block, not `modifiers = [...]`.
+- Inside each style, only expose relevant slots, which keeps the preset readable and prevents UI clutter. [civitai](https://civitai.com/articles/2528/another-way-to-go-about-prompting-with-a-prompt-group-which-is-works-best-you-decide)
+- Reuse normalized slot names such as `style`, `effect`, `finish`, `output`, `time`, `quality`, `shot`, `mood`, `color`, `environment`, `framing`, and `perspective` so the pack stays machine-friendly. [arxiv](https://arxiv.org/html/2204.13988)
+
+## Recommended cleanup
+
+Two small consistency fixes would improve this pack further:
+
+- Rename `actionModifiers.effects` to `actionModifiers.effect` so singular slot names stay uniform across all groups.
+- Optionally rename `portraitModifiers.styling` to `portraitModifiers.pose` so the slot name matches how you reference it under styles.
+
+I can do the next pass as a **fully normalized final pack of all 25 styles in exactly this syntax**, with every group name and slot made perfectly consistent.

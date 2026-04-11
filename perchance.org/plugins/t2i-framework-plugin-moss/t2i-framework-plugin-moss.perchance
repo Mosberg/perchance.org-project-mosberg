@@ -934,17 +934,67 @@ $output(settings) =>
   };
 
   function generateModifierHtml(modifiers) {
+    function collectModifierOptions(node, out = [], seen = new Set()) {
+      if(!node || seen.has(node)) return out;
+      seen.add(node);
+
+      if(!node.getAllKeys) return out;
+
+      for(let key of node.getAllKeys) {
+        let value = node[key];
+
+        if(value === undefined || value === null) continue;
+
+        if(value.getAllKeys) {
+          collectModifierOptions(value, out, seen);
+        } else {
+          out.push({
+            key,
+            value: value.evaluateItem
+          });
+        }
+      }
+
+      return out;
+    }
+
     let selectEls = [];
+
     for(let modifierName of modifiers.getAllKeys) {
       let list = modifiers[modifierName];
-      if(!list.getAllKeys) continue; // some people have bugs in their list indentation etc. and this prevents their bugs from breaking the other modifiers
+      if(!list) continue;
+
+      let flattenedOptions = collectModifierOptions(list);
+
+      if(flattenedOptions.length === 0) continue;
+
       let optionEls = [];
-      optionEls.push(`<option value="" selected>Add ${modifierName}...</option>`);
-      for(let key of list.getAllKeys) {
-        optionEls.push(`<option value="${list[key].evaluateItem.replaceAll("\"", "&quot;")}">${key}</option>`)
+      optionEls.push(`<option value="">Add ${modifierName}...</option>`);
+
+      for(let opt of flattenedOptions) {
+        optionEls.push(
+          `<option value="${String(opt.value).replaceAll('"', "&quot;")}">${opt.key}</option>`
+        );
       }
-      selectEls.push(`<select onchange="if(this.value) { this.closest('.input-ctn').querySelector('textarea').value += this.value; this.value=''; this.closest('.input-ctn').querySelector('textarea').oninput({}); let o=this.querySelector('option'); let originalFirstItemContent=o.textContent; o.textContent='↑ Added ↑'; setTimeout(() => o.textContent=originalFirstItemContent, 1000); }" style="margin-right:0.25rem; margin-top:0.25rem; font-size:80%;">${optionEls.join("")}</select>`);
+
+      selectEls.push(`
+        <select onchange="
+          if(this.value){
+            let ta=this.closest('.input-ctn').querySelector('textarea');
+            ta.value += this.value;
+            ta.oninput({});
+            let o=this.querySelector('option');
+            let originalFirstItemContent=o.textContent;
+            o.textContent='Added!';
+            setTimeout(()=>o.textContent=originalFirstItemContent,1000);
+            this.value='';
+          }
+        " style="margin-right:0.25rem; margin-top:0.25rem; font-size:80%;">
+          ${optionEls.join("")}
+        </select>
+      `);
     }
+
     return selectEls.join("");
   }
 
