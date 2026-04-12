@@ -1,0 +1,46 @@
+{
+  "custom_plugins": [
+    {
+      "label": "Tabbed Comments Plugin V1",
+      "description": "A plugin that adds tabbed comments to a webpage, allowing users to organize and view comments in different categories or sections.",
+      "url": "https://perchance.org/tabbed-comments-plugin-v1",
+      "url_edit": "https://perchance.org/tabbed-comments-plugin-v1#edit",
+      "snippet": "tabbedCommentsPlugin = {import:tabbed-comments-plugin-v1}"
+    },
+    {
+      "label": "Create Media Gallery Plugin",
+      "description": "A plugin that allows users to create and manage media galleries, including images, videos, and other media types.",
+      "url": "https://perchance.org/create-media-gallery-plugin",
+      "url_edit": "https://perchance.org/create-media-gallery-plugin#edit",
+      "snippet": "createMediaGalleryPlugin = {import:create-media-gallery-plugin}"
+    },
+    {
+      "label": "Prompt2 Plugin Moss",
+      "description": "A plugin like `window.prompt`, except async, and with a lot more features.",
+      "url": "https://perchance.org/prompt2-plugin-moss",
+      "url_edit": "https://perchance.org/prompt2-plugin-moss#edit",
+      "snippet": "prompt2PluginMoss = {import:prompt2-plugin-moss}"
+    },
+    {
+      "label": "Huge Emoji List",
+      "description": "A plugin that provides a comprehensive list of emojis, allowing users to easily access and use a wide variety of emojis in their projects or communications.",
+      "url": "https://perchance.org/huge-emoji-list",
+      "url_edit": "https://perchance.org/huge-emoji-list#edit",
+      "snippet": "customEmojis = {import:huge-emoji-list}"
+    },
+    {
+      "label": "Random Pokemon Generator",
+      "description": "Simply generates a random pokemon name at each click :)",
+      "url": "https://perchance.org/pokemon",
+      "url_edit": "https://perchance.org/pokemon#edit",
+      "snippet": "aiPokemonGeneratorMoss = {import:pokemon}"
+    },
+    {
+      "label": "Random Animal Generator",
+      "description": "A simple generator that gives you a random animal name.",
+      "url": "https://perchance.org/animal",
+      "url_edit": "https://perchance.org/animal#edit",
+      "snippet": "animalGeneratorMoss = {import:animal}"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - "**"
+  pull_request:
+    paths:
+      - "**"
+
+jobs:
+  validate-and-package:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: perchance.org/language/0.6.1
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Validate JSON
+        run: npm run validate:json
+
+      - name: Grammar snapshot regression
+        run: npm run test:grammar
+
+      - name: Package extension
+        run: npm run package:vsix

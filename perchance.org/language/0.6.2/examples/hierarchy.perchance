@@ -1,0 +1,10 @@
+names
+  alice
+    full = Alice Example
+    role = mage
+  bob
+    full = Bob Example
+    role = rogue
+
+output
+  [names.selectOne.evaluateItem]

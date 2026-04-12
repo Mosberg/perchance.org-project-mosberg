@@ -1,0 +1,165 @@
+{
+  "name": "perchance-language-mosberg",
+  "displayName": "Perchance Language (Mosberg)",
+  "description": "Perchance language support with colorful syntax, snippets, IntelliSense, official plugin/template data integration, hover docs, symbols, references, and import diagnostics.",
+  "version": "0.6.2",
+  "publisher": "mosberg",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mosberg/perchance-language-mosberg"
+  },
+  "homepage": "https://github.com/Mosberg/perchance-language-mosberg#readme",
+  "bugs": {
+    "url": "https://github.com/Mosberg/perchance-language-mosberg/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Snippets"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "validate:json": "node scripts/validate-json.js",
+    "test:grammar": "node scripts/grammar-snapshot.js",
+    "test": "npm run validate:json ; npm run test:grammar",
+    "package:vsix": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.6.0"
+  },
+  "keywords": [
+    "perchance",
+    "javascript",
+    "textmate",
+    "syntax highlighting",
+    "generator",
+    "vscode"
+  ],
+  "files": [
+    "syntaxes/**",
+    "snippets/**",
+    "data/**",
+    "media/**",
+    "examples/**",
+    "extension.js",
+    "language-configuration.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "perchance",
+        "aliases": [
+          "Perchance",
+          "perchance"
+        ],
+        "extensions": [
+          ".perchance",
+          ".pch"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "perchance",
+        "scopeName": "source.perchance",
+        "path": "./syntaxes/perchance.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.javascript": "javascript",
+          "meta.embedded.block.javascript.perchance": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "perchance",
+        "path": "./snippets/perchance.code-snippets"
+      }
+    ],
+    "configuration": {
+      "title": "Perchance (Mosberg)",
+      "properties": {
+        "perchance.completions.enableGlobals": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable completion suggestions for global symbols like input/settings/window/page."
+        },
+        "perchance.completions.enableMethods": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable completion suggestions for common Perchance list methods."
+        },
+        "perchance.completions.enableProperties": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable completion suggestions for common Perchance property keys."
+        },
+        "perchance.hover.enableDocs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover documentation for Perchance methods, globals, and keys."
+        },
+        "perchance.completions.enableOfficialPlugins": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable import completions from bundled official Perchance plugin data."
+        },
+        "perchance.completions.enableCustomPlugins": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable import completions from workspace custom plugin files."
+        },
+        "perchance.completions.enableTemplateLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable template URL completions from bundled official template data."
+        },
+        "perchance.plugins.customPluginsFileName": {
+          "type": "string",
+          "default": "plugins.perchance.json",
+          "description": "Workspace custom plugin file name used to resolve additional import modules."
+        },
+        "perchance.commands.enableTemplateInsertion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable template insertion commands powered by bundled template JSON data."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "perchance.createWorkspacePluginsFile",
+        "title": "Perchance: Create Workspace Custom Plugins File"
+      },
+      {
+        "command": "perchance.insertCustomTemplate",
+        "title": "Perchance: Insert Custom Template"
+      },
+      {
+        "command": "perchance.insertOfficialTemplateLink",
+        "title": "Perchance: Insert Official Template Link"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "perchance.createWorkspacePluginsFile"
+        },
+        {
+          "command": "perchance.insertCustomTemplate"
+        },
+        {
+          "command": "perchance.insertOfficialTemplateLink"
+        }
+      ]
+    }
+  }
+}

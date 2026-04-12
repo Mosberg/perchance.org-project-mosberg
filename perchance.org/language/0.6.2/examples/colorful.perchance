@@ -1,0 +1,24 @@
+# 0.5.0 colorful fixture
+
+animals
+  cat
+  dog
+  zebra
+
+animalType
+  fox
+  wolf
+  bird
+
+sentence
+  The [animals.selectOne] jumps over the [animalType].
+  {10-20} apples and {30-70} pears
+  [animals.selectUnique(2).joinItems(", ")]
+  [animals.evaluateItem]
+  [animals.getLengthItems()]
+
+output
+  <div style="color:#ff5555; background:#1e1e2e;" onClick="console.log(input.description)">
+    [settings.model.temperature ?? 0.7]
+    [window.chatState?.ready ? "Ready" : "Waiting"]
+  </div>

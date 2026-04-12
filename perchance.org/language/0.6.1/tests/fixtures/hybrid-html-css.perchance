@@ -1,0 +1,9 @@
+introMessage = <div style="max-width:700px; margin:0 auto; color:#999;">Welcome&nbsp;to&nbsp;Perchance</div>
+
+async generate(input) =>
+  const ready = window.chatState?.ready ?? false;
+  const tpl = `<span style="font-size:80%; color:#ff5555;">${input.description}</span>`;
+  if (ready) {
+    return tpl;
+  }
+  return `<script>console.log('fallback')</script>`;

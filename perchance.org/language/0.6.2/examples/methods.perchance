@@ -1,0 +1,11 @@
+list
+  alpha
+  beta
+  gamma
+
+output
+  [list.selectOne]
+  [list.selectUnique(2).joinItems(", ")]
+  [list.evaluateItem]
+  [list.getLengthItems()]
+  [list.map(item => item)]

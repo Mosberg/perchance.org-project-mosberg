@@ -1,0 +1,15 @@
+generateHTML = {import:t2i-framework-plugin-moss}
+stylePack = {import:t2i-styles-moss}
+stylePack2 = {import:t2i-styles-moss}
+
+output
+  prompt = [input.description], cinematic shot, dramatic lighting
+  negative = [input.negative]
+  onStart() =>
+    console.log("start")
+  onChunk(chunk) =>
+    console.log(chunk)
+  onFinish() =>
+    console.log("finish")
+  render() =>
+    return `<div style="color:#2bbb00; margin:8px;">[input.description]</div>`

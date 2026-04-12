@@ -1,0 +1,9 @@
+animals
+  wolf
+  tiger
+  fox
+
+sentence
+  [animals.selectOne] jumps over [animals.selectUnique(2).joinItems(", ")]
+  [animals.getLengthItems] animals available ^2
+  [animals.evaluateItem]

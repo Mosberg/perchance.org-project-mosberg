@@ -1,6 +1,6 @@
 # Perchance Language (Mosberg)
 
-Create a version 0.6.0 of my Perchance Language (Mosberg) Language support vscode extension with as many colorful syntaxes as possible for perchance.org check these links for information and code examples:
+Create a version 0.6.0 of my Perchance Language (Mosberg) - Language support vscode extension with as many colorful syntaxes as possible for perchance.org check these links for information and code examples:
 
 ## Tutorials and Examples
 

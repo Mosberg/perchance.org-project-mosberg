@@ -203,8 +203,8 @@ settings
 
 
 randomDescription
-  {import:pokemon} x {import:pokemon} hybrid ^5
-  {import:animal} x {import:animal} hybrid ^5
+  {import:pokemon} x hybrid ^5
+  {import:animal} x hybrid ^5
   {serpentine|coiled|robust|slender} {dragon|lizard-like creature|wyvern} with {feathery|tattered|bat-like|webbed|translucent} wings and {colorful|iridescent|rune-covered|mossy|red-orange|vibrant|aura-emitting} scales
   {bipedal|quadrupedal|tripedal} {elephant|mammoth-like creature|mammoth-rhino hybrid|behemoth} with {long|curved|jagged|spiral} tusks and a {prehensile|whip-like|clubbed|branch-like} tail
   {chubby|sleek|fluffy|spiky|smooth} {cat|dog|goat-like|lynx|fox|feline} creature with {one|two|three|four|five} tails, each tipped with an {elemental|ethereal|crystal|smoky|fiery|luminescent} flame

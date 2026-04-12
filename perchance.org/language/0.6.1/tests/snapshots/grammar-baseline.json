@@ -1,0 +1,10 @@
+{
+  "imports": 3,
+  "squareExpressions": 7,
+  "weights": 1,
+  "methodCalls": 5,
+  "htmlTags": 8,
+  "templateInterpolations": 1,
+  "optionalChains": 1,
+  "nullishCoalescing": 1
+}
