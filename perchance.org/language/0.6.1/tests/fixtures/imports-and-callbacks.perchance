@@ -1,6 +1,6 @@
 generateHTML = {import:t2i-framework-plugin-moss}
 stylePack = {import:t2i-styles-moss}
-stylePack2 = {import:t2i-styles-moss}
+stylePack2 = {import:t2i-styles-moss-anime}
 
 output
   prompt = [input.description], cinematic shot, dramatic lighting
